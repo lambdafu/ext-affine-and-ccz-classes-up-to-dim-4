@@ -1,0 +1,47 @@
+We use depth-first backtrack programming with efficient EA canonicity filters to prune the search tree, as in \cite{Brinkmann2008}.  A function is a \emph{canonical representative} of its class if its function table is the smallest lexicographically in the alphabet $\F$.
+
+\subsection{Table Layout}
+
+The tables below enumerate all EA classes and their canonical representative by giving their function table.
+
+We include the algebraic degree, which is an EA (but not CCZ) invariant. Note that for this to be true, we give the degree of the class containing $s \equiv 0$ as $1$.
+
+We also include the extended Walsh spectrum, which is the multi-set $W_s := \{|w_s(a,b)| \mid a,b\in\F, b \neq 0\}$ where $w_s(a,b)=\sum_{x\in\F}(-1)^{bs(x)+ax}$. The extended Walsh spectrum is known to be a CCZ (and thus also EA) invariant \cite{Carlet1998}.
+
+We further check for CCZ equivalence among the EA canonical representations.  Because CCZ equivalence implies EA equivalence, this is sufficient to find representatives for all CCZ classes.  In the tables below, the column \emph{CCZ} either says "can." if this entry is also a canonical representative for CCZ equivalence, or it gives the index of a CCZ canonical representative to which this entry is CCZ equivalent.
+
+We directly check for EA equivalence to bijective functions. If an entry in the table is EA equivalent to a bijective function, the column "bij.?" contains the letter "Y" (for "yes"), otherwise it contains the letter "N" (for "no").
+
+\subsection{Total Number of Functions}
+
+The total number of functions in $\F\to\F$ is $({2^n})^{2^n}$. This set is partitioned into EA equivalence classes. To determine the size of each class, we consider the group $G$ of all function triplets $(\alpha, \beta, \gamma)$ that acts on $s:\F\to\F$ by means of $(\alpha, \beta, \gamma)\cdot s = \beta s \alpha + \gamma$, where $\alpha$ is an affine bijection, $\beta$ is a linear bijection, and $\gamma$ is any affine function (the affine component of $\beta$ is subsumed by $\gamma$). Then the EA equivalence class of $s$ is the orbit $Gs$ and the size is $|Gs| = |G|/|G_s|$, where $G_s = \{(\alpha, \beta, \gamma) \in G | \beta s \alpha + \gamma = s\}$ is the \emph{stabiliser} of $s$.
+
+The order of $G$ is easily counted, as the number of linear bijections is well known (cf. A002884 in \cite{oeis}):
+
+\begin{equation}
+\begin{aligned}
+|G| & = |G^\alpha|\cdot|G^\beta|\cdot|G^\gamma| \\
+& = \left( 2^n \cdot \prod_{i=0}^{n-1}(2^n-2^i) \right)\cdot
+\left( \prod_{i=0}^{n-1}(2^n-2^i)\right)
+\cdot{(2^n)}^{n+1}
+\end{aligned}
+\end{equation}
+
+See \autoref{tab:order} for the order of $|G|$ up to dimension 4.
+
+\begin{table}\centering
+\begin{tabular}{>{\bfseries}rrrrr}
+\toprule
+$n$ & $|G^\alpha|$ & $|G^\beta|$ & $|G^\gamma|$ & $|G|$ \\
+\midrule
+1 & 2 & 1 & 4 & 8 \\
+2 & 24 & 6 & 64 & 9216 \\
+3 & 1344 & 168 & 4096 & 924844032 \\
+4 & 322560 & 20160 & 1048576 & 6818690079129600 \\
+ \bottomrule
+\end{tabular}
+\caption{The size of the group of affine functions $(\alpha, \beta, \gamma)$ acting on $s$, c.f. A028365, A002884 and A053763 in \cite{oeis}.}
+\label{tab:order}
+\end{table}
+
+For example, to calculate the size of the equivalence class $s=s_1$ in \autoref{tab:dim4}, we have $|Gs| = |G|/|G_s| = 6818690079129600 / 6502809600 = 1048576$.

@@ -1,0 +1,88 @@
+\documentclass[a4paper,twocolumn,10pt]{article}
+\usepackage{usenix,epsfig,endnotes}
+
+\usepackage[utf8]{inputenc}%(only for the pdftex engine)
+%\RequirePackage[no-math]{fontspec}%(only for the luatex or the xetex engine)
+\usepackage[T1]{fontenc}
+\usepackage{xspace}
+%%% \usepackage{graphicx}
+%%% \usepackage[hyphens]{url}
+\usepackage{url}
+\usepackage{hyperref}
+%\usepackage[table]{xcolor}    % loads also »colortbl«
+\usepackage{listings}
+%%% \usepackage{tabularx}
+%%% \usepackage{float}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{colortbl}
+%%% \usepackage[flushleft]{threeparttable}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage[affil-it]{authblk}
+%%% \usepackage{nth}
+%%% \usepackage{courier}
+\usepackage{wasysym}
+\usepackage{pifont}
+\usepackage[font={small}]{caption}
+
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{float}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\F}{{\mathbb{F}}_2^n}
+\newcommand{\G}{\mathcal{G}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% don't want date printed
+\date{}
+
+\title{Extended Affine and CCZ Equivalence up to Dimension 4}
+
+\author{
+{\rm Marcus Brinkmann}\thanks{Email: \texttt{marcus.brinkmann@rub.de}}\\
+Ruhr University Bochum
+}
+
+\maketitle
+
+
+\subsection*{Abstract}
+
+For all vectorial boolean functions up to dimension 4, we present canonical representatives for all extended affine (EA) and CCZ equivalence classes.  We include the size of each class, as well as its algebraic degree and extended Walsh spectrum.  We also answer the following questions: How large are these classes? Which of these classes contain bijective functions? And how are these classes grouped into CCZ equivalence classes?
+
+\section{Introduction}
+\input{010-introduction.tex}
+\section{Methodology}
+\input{015-methodology.tex}
+\section{Results}
+\input{017-results.tex}
+\appendix
+
+\section{References}
+\bibliographystyle{ieeetr}
+\bibliography{100-bibliography}
+
+\newpage
+\section{Function Tables}
+\subsection{Dimension 1}
+\input{020-dim-1.tex}
+\subsection{Dimension 2}
+\input{030-dim-2.tex}
+\newpage\onecolumn
+\subsection{Dimension 3}
+\input{040-dim-3.tex}
+\newpage
+\subsection{Dimension 4}
+\input{050-dim-4.tex}
+
+
+\end{document}
